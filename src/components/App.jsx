@@ -1,16 +1,13 @@
+import React from 'react';
+import { Card } from './Card/Card';
+import { Container, Thumb } from './App.styled';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <Thumb>
+        <Card />
+      </Thumb>
+    </Container>
   );
 };
