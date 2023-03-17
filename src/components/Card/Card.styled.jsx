@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.li`
    width: 280px;
   height: 460px;
   background: linear-gradient(

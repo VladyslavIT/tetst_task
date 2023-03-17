@@ -12,3 +12,8 @@ export const Thumb = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const List = styled.ul`
+  display: flex;
+  gap: 24px;
+`;

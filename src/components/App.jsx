@@ -1,12 +1,17 @@
 import React from 'react';
 import { Card } from './Card/Card';
-import { Container, Thumb } from './App.styled';
+import users from '../users.json';
+import { Container, Thumb, List } from './App.styled';
 
 export const App = () => {
   return (
     <Container>
       <Thumb>
-        <Card />
+        <List>
+          {users.map(item => (
+            <Card key={users.id} {...item} />
+          ))}
+        </List>
       </Thumb>
     </Container>
   );

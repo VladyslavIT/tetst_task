@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "user": "Elon Reeve Musk",
+    "tweets": 777,
+    "followers": 100500,
+    "avatar": "url.jpg"
+  },
+  {
+    "id": 2,
+    "user": "Robert Pattinson",
+    "tweets": 359,
+    "followers": 120460,
+    "avatar": "url.jpg"
+  },
+  {
+    "id": 3,
+    "user": " Kristen Stewart",
+    "tweets": 911,
+    "followers": 156240,
+    "avatar": "url.jpg"
+  }
+]
