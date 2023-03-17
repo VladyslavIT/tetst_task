@@ -66,3 +66,5 @@ export const InfoWrapper = styled.div`
   text-transform: uppercase;
   color: #ebd8ff;
 `;
+export const Info = styled.span`
+`;
