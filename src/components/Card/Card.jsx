@@ -3,6 +3,8 @@ import { boy, picture, rectangle } from '../../images/index';
 import { Logo } from 'components/Logo/Logo';
 import { Button } from 'components/Button/Button';
 import {
+  CardItem,
+  CardTitle,
   CardWrapper,
   ImageWrapper,
   MainPicture,
@@ -14,25 +16,25 @@ import {
   Info,
 } from './Card.styled';
 
-const Card = () => {
+const Card = ({ id, user, tweets, followers }) => {
   const [follow, setFollow] = useState(false);
-  const [followerCount, setFollowerCount] = useState(100500);
+  const [followerCount, setFollowerCount] = useState(followers);
 
   useEffect(() => {
-    const followStatus = localStorage.getItem('user');
+    const followStatus = localStorage.getItem(`card:${id}`);
     if (followStatus !== null) {
       const user = JSON.parse(followStatus);
       setFollow(user.following);
       setFollowerCount(user.count);
     }
-  }, []);
+  }, [id]);
 
   const onFollow = () => {
     if (!follow) {
       setFollow(true);
       setFollowerCount(followerCount + 1);
       localStorage.setItem(
-        'user',
+        `card:${id}`,
         JSON.stringify({ following: true, count: followerCount + 1 })
       );
       return;
@@ -40,7 +42,7 @@ const Card = () => {
     setFollow(false);
     setFollowerCount(followerCount - 1);
     localStorage.setItem(
-      'user',
+      `card:${id}`,
       JSON.stringify({ following: false, count: followerCount - 1 })
     );
   };
@@ -52,6 +54,8 @@ const Card = () => {
   });
   return (
     <>
+    <CardItem>
+    <CardTitle>{user}</CardTitle>
       <CardWrapper>
         <ImageWrapper>
           <Logo />
@@ -66,12 +70,13 @@ const Card = () => {
         </RectangleWrapper>
 
         <InfoWrapper>
-          <Info>777 TWEETS</Info>
+          <Info>{tweets} TWEETS</Info>
           <Info>{formattedCount} FOLLOWERS</Info>
         </InfoWrapper>
 
         <Button onFollow={onFollow} follow={follow} />
       </CardWrapper>
+      </CardItem>
     </>
   );
 };

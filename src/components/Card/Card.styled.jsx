@@ -1,7 +1,18 @@
 import styled from 'styled-components';
 
-export const CardWrapper = styled.li`
-   width: 280px;
+export const CardItem = styled.li``;
+
+export const CardTitle = styled.h2`
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+`;
+
+export const CardWrapper = styled.div`
+  width: 280px;
   height: 460px;
   background: linear-gradient(
     114.99deg,
@@ -66,5 +77,4 @@ export const InfoWrapper = styled.div`
   text-transform: uppercase;
   color: #ebd8ff;
 `;
-export const Info = styled.span`
-`;
+export const Info = styled.span``;
