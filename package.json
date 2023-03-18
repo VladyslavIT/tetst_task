@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://VladyslavIT.github.io/tetst_task/",
   "dependencies": {
-   
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
