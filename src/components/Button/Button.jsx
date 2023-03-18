@@ -18,6 +18,6 @@ const Button = ({ onFollow, follow }) => {
 export { Button };
 
 Button.propTypes = {
-  follow: PropTypes.bool.isRequired,
-  onFollow: PropTypes.func.isRequired,
+  follow: PropTypes.bool,
+  onFollow: PropTypes.func,
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { boy, picture, rectangle } from '../../images/index';
 import { Logo } from 'components/Logo/Logo';
 import { Button } from 'components/Button/Button';
@@ -52,33 +53,41 @@ const Card = ({ id, user, tweets, followers }) => {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
+
   return (
     <>
-    <CardItem>
-    <CardTitle>{user}</CardTitle>
-      <CardWrapper>
-        <ImageWrapper>
-          <Logo />
+      <CardItem>
+        <CardTitle>{user}</CardTitle>
+        <CardWrapper>
+          <ImageWrapper>
+            <Logo />
 
-          <MainWrapper>
-            <MainPicture src={picture} alt="main" />
-          </MainWrapper>
-        </ImageWrapper>
-        <RectangleWrapper>
-          <Boy src={boy} alt="boy" />
-          <Rectangle src={rectangle} alt="rectangle" />
-        </RectangleWrapper>
+            <MainWrapper>
+              <MainPicture src={picture} alt="main" />
+            </MainWrapper>
+          </ImageWrapper>
+          <RectangleWrapper>
+            <Boy src={boy} alt="boy" />
+            <Rectangle src={rectangle} alt="rectangle" />
+          </RectangleWrapper>
 
-        <InfoWrapper>
-          <Info>{tweets} TWEETS</Info>
-          <Info>{formattedCount} FOLLOWERS</Info>
-        </InfoWrapper>
+          <InfoWrapper>
+            <Info>{tweets} TWEETS</Info>
+            <Info>{formattedCount} FOLLOWERS</Info>
+          </InfoWrapper>
 
-        <Button onFollow={onFollow} follow={follow} />
-      </CardWrapper>
+          <Button onFollow={onFollow} follow={follow} />
+        </CardWrapper>
       </CardItem>
     </>
   );
 };
 
 export { Card };
+
+Button.propTypes = {
+  id: PropTypes.number,
+  user: PropTypes.string,
+  tweets: PropTypes.number,
+  followers: PropTypes.number,
+};
